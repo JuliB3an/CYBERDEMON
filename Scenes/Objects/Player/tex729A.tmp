@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://bc7nowhtu5ahe"]
+
+[ext_resource type="Script" path="res://Scenes/Objects/Player/texture_capture_device.gd" id="1_dkt1v"]
+[ext_resource type="ArrayMesh" uid="uid://2pk2p2mr145e" path="res://Dagger.obj" id="2_j2414"]
+
+[node name="TextureCaptureDevice" type="SubViewport"]
+transparent_bg = true
+script = ExtResource("1_dkt1v")
+
+[node name="Node3D" type="Node3D" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="Node3D"]
+projection = 1
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(0.0719095, 0, 0, 0, 0.0719095, 0, 0, 0, 0.0719095, 0, 0, -2)
+cast_shadow = 0
+gi_mode = 0
+mesh = ExtResource("2_j2414")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 0.835941, 0.548819, 0, -0.548819, 0.835941, 0, 0.91507, -0.561766)
+light_color = Color(0, 0.694118, 0, 1)

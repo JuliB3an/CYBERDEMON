@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://bmcyaxmi316mp"]
+
+[ext_resource type="Script" path="res://Scenes/shootCast.gd" id="1_h4gs2"]
+[ext_resource type="Material" uid="uid://chfj5n6ykls7b" path="res://Scenes/WhiteTransparent.tres" id="1_unava"]
+[ext_resource type="PackedScene" uid="uid://ctht0f1tes3m7" path="res://Scenes/hit_place.tscn" id="3_s52dn"]
+
+[node name="ShootCast" type="MeshInstance3D"]
+material_override = ExtResource("1_unava")
+script = ExtResource("1_h4gs2")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.2
+autostart = true
+
+[node name="HitPlace" parent="." instance=ExtResource("3_s52dn")]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,0 +1,14 @@
+Sprite3D
+CSGBox3D
+Timer
+MeshInstance3D
+Decal
+CollisionShape3D
+RayCast3D
+RigidBody3D
+Marker3D
+Node3D
+ColorRect
+AnimationPlayer
+SpotLight3D
+OmniLight3D

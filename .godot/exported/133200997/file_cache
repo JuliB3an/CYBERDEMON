@@ -1,0 +1,13 @@
+res://DebugRoom.tscn::602dc87dabd96ac9af4d368460d823f8::1712970486::res://.godot/exported/133200997/export-53dee24dd1a613d39635c7771ecbb3ff-DebugRoom.scn
+res://Scenes/Objects/Player/Player.tscn::9125fc95b6f10c6606bf2fe01419d2ee::1712954493::res://.godot/exported/133200997/export-21ef62677f6181420dd07ea0b9a0b147-Player.scn
+res://Scenes/Objects/Player/PlayerGui.tscn::764a9566c40ca641dc6c2245f4857c69::1712941857::res://.godot/exported/133200997/export-81000cb22ff9b03a18bc548541029cda-PlayerGui.scn
+res://Scenes/Objects/Player/texture_capture_device.tscn::7759d43c8934610ea7d6e75171322d27::1711690156::res://.godot/exported/133200997/export-fbbbe1a7de245729431fe6870467de0c-texture_capture_device.scn
+res://Scenes/Objects/MoneyBag.tscn::ad60decd75bf6829152fc65eab6ca656::1711736032::res://.godot/exported/133200997/export-100c74fc67ae7f197167de6b1af60145-MoneyBag.scn
+res://Scripts/Resources/Pistol.tres::aff9a3fc40a1ed5339dfc8744aec30b6::1712933720::res://.godot/exported/133200997/export-a5f88ce3336759bccba407f46af9a35f-Pistol.res
+res://Scripts/Resources/Rifle.tres::90a8fabd7d08320c4a46a9a522976097::1712969725::res://.godot/exported/133200997/export-92a73a55275647e103d7886dc44ed71f-Rifle.res
+res://Scripts/Resources/Shotgun.tres::2bd85ed25597613f5fb946806f367d1c::1712969720::res://.godot/exported/133200997/export-857747b0c087a3c822efeaa29c005369-Shotgun.res
+res://Scenes/bullet.tscn::394adbc70e85def8ae047de94450dad5::1712970487::res://.godot/exported/133200997/export-ebb3521b4f0ab2fc80eef1183e18e924-bullet.scn
+res://Scenes/Hitpoint.tscn::d26a851e8e8968e4b9beb7576ed37eb6::1712969022::res://.godot/exported/133200997/export-462b406ce11b3c8e4aeeefa2a7d8169d-Hitpoint.scn
+res://Scenes/shootCast.tscn::8d09d3493220df47ef0590ef4abdef40::1712954493::res://.godot/exported/133200997/export-37e17c496579202e53d9220d5fe17ed5-shootCast.scn
+res://hit_place.tscn::3e79397d86f4e58cb07580acc140e828::1712970513::res://.godot/exported/133200997/export-bc929027bbad10f0945eed3623992767-hit_place.scn
+res://WhiteTransparent.tres::bf37b5a4d4af526a2fa37b1d7f1eeebf::1712968888::res://.godot/exported/133200997/export-4f76daef4772460b400e770e4e1e8f3c-WhiteTransparent.res

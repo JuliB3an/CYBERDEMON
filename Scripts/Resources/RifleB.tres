@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Weapon_Resource" load_steps=2 format=3 uid="uid://bmtt2i50ao457"]
+
+[ext_resource type="Script" path="res://Scripts/WeaponResource.gd" id="2_dk8wp"]
+
+[resource]
+script = ExtResource("2_dk8wp")
+weaponName = "RifleB"
+weaponPath = NodePath("FPSRig/RifleB")
+activateAnimation = "RifleBAppear"
+shootAnimation = "RifleBShoot"
+shootAnimSpeed = 1.2
+auto = true
+Type = 1
+projectileSpeed = 0.0
+projectileCount = 1
+projectileSpread = 0.0
+damage = 3.0

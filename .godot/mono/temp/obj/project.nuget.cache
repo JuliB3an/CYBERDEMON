@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "VJtJPnEDvVH6BqYrlBp5+LSENoxH/E7RICRu2f55t8lkGfnM6JJlv5hOc3Ioq//Au1BLe5qJlglAXPy/oOSr0g==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\lilli\\OneDrive\\Desktop\\Programming\\MyGames\\FPSGame\\CYBERDEMON.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\lilli\\.nuget\\packages\\godot.sourcegenerators\\4.2.1\\godot.sourcegenerators.4.2.1.nupkg.sha512",
+    "C:\\Users\\lilli\\.nuget\\packages\\godotsharp\\4.2.1\\godotsharp.4.2.1.nupkg.sha512",
+    "C:\\Users\\lilli\\.nuget\\packages\\godotsharpeditor\\4.2.1\\godotsharpeditor.4.2.1.nupkg.sha512",
+    "C:\\Users\\lilli\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.26\\microsoft.netcore.app.ref.6.0.26.nupkg.sha512",
+    "C:\\Users\\lilli\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.26\\microsoft.windowsdesktop.app.ref.6.0.26.nupkg.sha512",
+    "C:\\Users\\lilli\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.26\\microsoft.aspnetcore.app.ref.6.0.26.nupkg.sha512"
+  ],
+  "logs": []
+}

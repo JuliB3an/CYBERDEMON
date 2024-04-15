@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Weapon_Resource" load_steps=3 format=3 uid="uid://bcmqo05fo0b4y"]
+
+[ext_resource type="Script" path="res://Scripts/WeaponResource.gd" id="1_a320q"]
+[ext_resource type="PackedScene" uid="uid://5rs7x36r1u4v" path="res://Scenes/bullet.tscn" id="1_mu5rm"]
+
+[resource]
+script = ExtResource("1_a320q")
+weaponName = "Rifle"
+weaponPath = NodePath("FPSRig/Rifle")
+activateAnimation = "RifleAppear"
+shootAnimation = "RifleShoot"
+awayAnimation = "RifleAway"
+shootAnimSpeed = 1.5
+auto = true
+Type = 2
+projectile = ExtResource("1_mu5rm")
+projectileSpeed = 70.0
+projectileCount = 1
+projectileSpread = 0.0
+damage = 4.0

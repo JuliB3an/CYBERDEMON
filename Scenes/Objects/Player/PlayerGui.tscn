@@ -1,0 +1,298 @@
+[gd_scene load_steps=50 format=3 uid="uid://ckkkhb1b7cwrr"]
+
+[ext_resource type="Texture2D" uid="uid://dshswqykdfou7" path="res://Scenes/Objects/Player/playerAnimations/IdleHand.png" id="1_323hi"]
+[ext_resource type="Texture2D" uid="uid://cr6h2mq2ob2x1" path="res://Scenes/Objects/Player/playerAnimations/GrappleOutHand.png" id="2_f4b5u"]
+[ext_resource type="Texture2D" uid="uid://d03jgptgemstb" path="res://Scenes/Objects/Player/playerAnimations/RightHandHolding.png" id="3_ndsux"]
+[ext_resource type="Texture2D" uid="uid://c4yy4h1qa2s48" path="res://Scenes/Objects/Player/playerAnimations/Lunge/Lunge-Sheet1.png" id="4_br5bx"]
+[ext_resource type="Texture2D" uid="uid://ymedpo3s7wh3" path="res://Scenes/Objects/Player/playerAnimations/CrawlRightAnimation/CrawlRight-Sheet5.png" id="4_tn0ii"]
+[ext_resource type="Texture2D" uid="uid://da2afu5lxv4hi" path="res://Scenes/Objects/Player/playerAnimations/Lunge/Lunge-Sheet2.png" id="5_e4ydm"]
+[ext_resource type="Texture2D" uid="uid://wiwwwabttu1a" path="res://Scenes/Objects/Player/playerAnimations/CrawlRightAnimation/CrawlRight-Sheet6.png" id="5_rpei5"]
+[ext_resource type="Texture2D" uid="uid://5j1tt40u3l35" path="res://Scenes/Objects/Player/playerAnimations/Lunge/Lunge-Sheet3.png" id="6_1er5x"]
+[ext_resource type="Texture2D" uid="uid://osxqwfnjiit0" path="res://Scenes/Objects/Player/playerAnimations/CrawlRightAnimation/CrawlRight-Sheet1.png" id="6_wlwjl"]
+[ext_resource type="Texture2D" uid="uid://bpcveqk7nbwfh" path="res://Scenes/Objects/Player/playerAnimations/Lunge/Lunge-Sheet4.png" id="7_74l7q"]
+[ext_resource type="Texture2D" uid="uid://b8xwat4ysbesx" path="res://Scenes/Objects/Player/playerAnimations/CrawlRightAnimation/CrawlRight-Sheet2.png" id="7_xml2w"]
+[ext_resource type="Texture2D" uid="uid://dyu68xcg7euo3" path="res://Scenes/Objects/Player/playerAnimations/Lunge/Lunge-Sheet5.png" id="8_gdi58"]
+[ext_resource type="Texture2D" uid="uid://cep25h6noed7p" path="res://Scenes/Objects/Player/playerAnimations/CrawlRightAnimation/CrawlRight-Sheet3.png" id="8_ssyvw"]
+[ext_resource type="Texture2D" uid="uid://cq01vq5k4vyxg" path="res://Scenes/Objects/Player/playerAnimations/CrawlRightAnimation/CrawlRight-Sheet4.png" id="9_h7ero"]
+[ext_resource type="Texture2D" uid="uid://cxy3ng24ky8va" path="res://Scenes/Objects/Player/playerAnimations/Lunge/Lunge-Sheet6.png" id="9_wpucb"]
+[ext_resource type="Texture2D" uid="uid://lsoqfooutos2" path="res://Scenes/Objects/Player/playerAnimations/Punch/Punch-Sheet1.png" id="10_1mgj5"]
+[ext_resource type="Texture2D" uid="uid://dey8s2pnprwsw" path="res://Scenes/Objects/Player/playerAnimations/GrappleBack/GrapplePullback-Sheet1.png" id="10_jcmhg"]
+[ext_resource type="Texture2D" uid="uid://cqk41k32f6yls" path="res://Scenes/Objects/Player/playerAnimations/Punch/Punch-Sheet2.png" id="11_mw33f"]
+[ext_resource type="Texture2D" uid="uid://8sb0745avh3" path="res://Scenes/Objects/Player/playerAnimations/GrappleBack/GrapplePullback-Sheet2.png" id="11_wn0bx"]
+[ext_resource type="Texture2D" uid="uid://d3ju2qvm3fuqd" path="res://Scenes/Objects/Player/playerAnimations/GrappleBack/GrapplePullback-Sheet3.png" id="12_20xon"]
+[ext_resource type="Texture2D" uid="uid://ps44itlba3q4" path="res://Scenes/Objects/Player/playerAnimations/Punch/Punch-Sheet3.png" id="12_i5gvl"]
+[ext_resource type="Texture2D" uid="uid://uaog8ietsghm" path="res://Scenes/Objects/Player/playerAnimations/Punch/Punch-Sheet4.png" id="13_gs1wc"]
+[ext_resource type="Texture2D" uid="uid://b2wq7itmi1ou2" path="res://Scenes/Objects/Player/playerAnimations/GrappleBack/GrapplePullback-Sheet4.png" id="13_kd12b"]
+[ext_resource type="Texture2D" uid="uid://bqigu1s0iwrjw" path="res://Scenes/Objects/Player/playerAnimations/Punch/Punch-Sheet5.png" id="14_47ugg"]
+[ext_resource type="Texture2D" uid="uid://wi6fult284qy" path="res://Scenes/Objects/Player/playerAnimations/GrappleBack/GrapplePullback-Sheet5.png" id="14_wl5bh"]
+[ext_resource type="Texture2D" uid="uid://c6hvhu4vn3spa" path="res://Scenes/Objects/Player/playerAnimations/GrappleBack/GrapplePullback-Sheet6.png" id="15_8wq6m"]
+[ext_resource type="Texture2D" uid="uid://be8u7jatee1wp" path="res://Scenes/Objects/Player/playerAnimations/Punch/Punch-Sheet6.png" id="15_wuphj"]
+[ext_resource type="Texture2D" uid="uid://bkdru45t0m3hk" path="res://Scenes/Objects/Player/playerAnimations/GrappleBack/GrapplePullback-Sheet7.png" id="16_0a2iy"]
+[ext_resource type="Texture2D" uid="uid://c0h0q147q5ey" path="res://Scenes/Objects/Player/playerAnimations/Punch/Punch-Sheet7.png" id="16_mvy0v"]
+[ext_resource type="Texture2D" uid="uid://u77l4chxleuc" path="res://Scenes/Objects/Player/playerAnimations/Parry/Parry-Sheet1.png" id="17_jhryj"]
+[ext_resource type="Texture2D" uid="uid://ccbm3fl675wkw" path="res://Scenes/Objects/Player/playerAnimations/CrawlLeftAnimation/CrawlLeft-Sheet1.png" id="17_ntlef"]
+[ext_resource type="Texture2D" uid="uid://m12d0fnmum8w" path="res://Scenes/Objects/Player/playerAnimations/CrawlLeftAnimation/CrawlLeft-Sheet2.png" id="18_b0yc0"]
+[ext_resource type="Texture2D" uid="uid://b5wktb8utchrc" path="res://Scenes/Objects/Player/playerAnimations/Parry/Parry-Sheet2.png" id="18_krgh7"]
+[ext_resource type="Texture2D" uid="uid://4g767tbcyc8o" path="res://Scenes/Objects/Player/playerAnimations/CrawlLeftAnimation/CrawlLeft-Sheet3.png" id="19_jxgvd"]
+[ext_resource type="Texture2D" uid="uid://pgbus8l5hqtm" path="res://Scenes/Objects/Player/playerAnimations/Parry/Parry-Sheet3.png" id="19_kx116"]
+[ext_resource type="Texture2D" uid="uid://du7qxvwensk88" path="res://Scenes/Objects/Player/playerAnimations/Parry/Parry-Sheet4.png" id="20_4mgrh"]
+[ext_resource type="Texture2D" uid="uid://bi3tm21mq3hq2" path="res://Scenes/Objects/Player/playerAnimations/CrawlLeftAnimation/CrawlLeft-Sheet4.png" id="20_oqlby"]
+[ext_resource type="Texture2D" uid="uid://ba4tthse8ljds" path="res://Scenes/Objects/Player/playerAnimations/Parry/Parry-Sheet5.png" id="21_d5r8k"]
+[ext_resource type="Texture2D" uid="uid://m8tuc0r5o4qh" path="res://Scenes/Objects/Player/playerAnimations/CrawlLeftAnimation/CrawlLeft-Sheet5.png" id="21_sgwbq"]
+[ext_resource type="Texture2D" uid="uid://dhvkdvcibiq5a" path="res://Scenes/Objects/Player/playerAnimations/CrawlLeftAnimation/CrawlLeft-Sheet6.png" id="22_ing4d"]
+[ext_resource type="Texture2D" uid="uid://cplijb132ovvg" path="res://Scenes/Objects/Player/playerAnimations/Parry/Parry-Sheet6.png" id="22_ovwnd"]
+[ext_resource type="Texture2D" uid="uid://bjlark31dqgg6" path="res://Scenes/Objects/Player/playerAnimations/Parry/Parry-Sheet7.png" id="23_6kcyq"]
+[ext_resource type="Texture2D" uid="uid://c7p0g11hlgu7q" path="res://Scenes/Objects/Player/playerAnimations/LeftHandHolding.png" id="37_1uif6"]
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_ku8cs"]
+frames = 6
+speed_scale = 12.0
+frame_0/texture = ExtResource("4_tn0ii")
+frame_1/texture = ExtResource("5_rpei5")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("6_wlwjl")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("7_xml2w")
+frame_3/duration = 1.0
+frame_4/texture = ExtResource("8_ssyvw")
+frame_4/duration = 1.0
+frame_5/texture = ExtResource("9_h7ero")
+frame_5/duration = 1.0
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_cl32b"]
+frames = 7
+speed_scale = 12.0
+frame_0/texture = ExtResource("10_jcmhg")
+frame_1/texture = ExtResource("11_wn0bx")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("12_20xon")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("13_kd12b")
+frame_3/duration = 1.0
+frame_4/texture = ExtResource("14_wl5bh")
+frame_4/duration = 1.0
+frame_5/texture = ExtResource("15_8wq6m")
+frame_5/duration = 1.0
+frame_6/texture = ExtResource("16_0a2iy")
+frame_6/duration = 1.0
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_ctwiq"]
+frames = 7
+one_shot = true
+speed_scale = 18.0
+frame_0/texture = ExtResource("10_1mgj5")
+frame_1/texture = ExtResource("11_mw33f")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("12_i5gvl")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("13_gs1wc")
+frame_3/duration = 1.0
+frame_4/texture = ExtResource("14_47ugg")
+frame_4/duration = 1.0
+frame_5/texture = ExtResource("15_wuphj")
+frame_5/duration = 1.0
+frame_6/texture = ExtResource("16_mvy0v")
+frame_6/duration = 1.0
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_eba24"]
+frames = 7
+speed_scale = 12.0
+frame_0/texture = ExtResource("17_jhryj")
+frame_1/texture = ExtResource("18_krgh7")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("19_kx116")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("20_4mgrh")
+frame_3/duration = 1.0
+frame_4/texture = ExtResource("21_d5r8k")
+frame_4/duration = 1.0
+frame_5/texture = ExtResource("22_ovwnd")
+frame_5/duration = 1.0
+frame_6/texture = ExtResource("23_6kcyq")
+frame_6/duration = 1.0
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_pf7p6"]
+frames = 6
+speed_scale = 12.0
+frame_0/texture = ExtResource("17_ntlef")
+frame_1/texture = ExtResource("18_b0yc0")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("19_jxgvd")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("20_oqlby")
+frame_3/duration = 1.0
+frame_4/texture = ExtResource("21_sgwbq")
+frame_4/duration = 1.0
+frame_5/texture = ExtResource("22_ing4d")
+frame_5/duration = 1.0
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_y1v5f"]
+frames = 6
+speed_scale = 10.0
+frame_0/texture = ExtResource("4_br5bx")
+frame_1/texture = ExtResource("5_e4ydm")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("6_1er5x")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("7_74l7q")
+frame_3/duration = 1.0
+frame_4/texture = ExtResource("8_gdi58")
+frame_4/duration = 1.0
+frame_5/texture = ExtResource("9_wpucb")
+frame_5/duration = 1.0
+
+[node name="Player" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.00354, 1)
+
+[node name="IdleRightHand" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -426.0
+offset_top = -240.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("1_323hi")
+
+[node name="GrappleOutRightHand" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -426.0
+offset_top = -240.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("2_f4b5u")
+
+[node name="HoldingItemRightHand" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -426.0
+offset_top = -240.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("3_ndsux")
+
+[node name="RightHandCrawl" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -426.0
+offset_top = -240.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = SubResource("AnimatedTexture_ku8cs")
+
+[node name="RightHandGrappleBack" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -426.0
+offset_top = -240.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = SubResource("AnimatedTexture_cl32b")
+
+[node name="LeftHandPunch" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -240.0
+offset_right = 426.0
+grow_vertical = 0
+texture = SubResource("AnimatedTexture_ctwiq")
+
+[node name="LeftHandParry" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -240.0
+offset_right = 426.0
+grow_vertical = 0
+texture = SubResource("AnimatedTexture_eba24")
+
+[node name="LeftHandCrawl" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -240.0
+offset_right = 426.0
+grow_vertical = 0
+texture = SubResource("AnimatedTexture_pf7p6")
+
+[node name="HoldingItemLeftHand" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -3.98589
+offset_top = -241.0
+offset_right = 422.014
+offset_bottom = -1.0
+grow_vertical = 0
+texture = ExtResource("37_1uif6")
+
+[node name="BothHandLunge" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -213.0
+offset_top = -120.0
+offset_right = 213.0
+offset_bottom = 120.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AnimatedTexture_y1v5f")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -3.25409
+offset_top = -2.0
+offset_right = 0.745911
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(2, 2)

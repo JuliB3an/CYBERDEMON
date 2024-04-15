@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://ctht0f1tes3m7"]
+
+[ext_resource type="Texture2D" uid="uid://cd6sbiamjg774" path="res://PNG/BlurryCircle.png" id="1_rq1ur"]
+[ext_resource type="Script" path="res://hit_place.gd" id="2_2o2rs"]
+
+[node name="HitPlace" type="Sprite3D"]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
+billboard = 2
+texture = ExtResource("1_rq1ur")
+script = ExtResource("2_2o2rs")

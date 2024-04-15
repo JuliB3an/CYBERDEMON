@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=3 uid="uid://bakmfr6bmpbb5"]
+
+[ext_resource type="Script" path="res://Scenes/Objects/Player.gd" id="1_btrrh"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5iefk"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_u056t"]
+height = 1.0
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_btrrh")
+
+[node name="StandingCollisionShape" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_5iefk")
+
+[node name="CrouchingCollisionShape" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+shape = SubResource("CapsuleShape3D_u056t")
+disabled = true
+
+[node name="CrouchingRaycast" type="RayCast3D" parent="."]
+target_position = Vector3(0, 1, 0)
+
+[node name="Head" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0)
+
+[node name="Eyes" type="Node3D" parent="Head"]
+
+[node name="AdditionalCameraRotations" type="Node3D" parent="Head/Eyes"]
+
+[node name="Camera3D" type="Camera3D" parent="Head/Eyes/AdditionalCameraRotations"]
+
+[node name="HeadCast" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0207026, 0.437629, 0.0129974)
+target_position = Vector3(0, 0, -1.5)
+
+[node name="ToeCast" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0207026, -0.456776, 0.0129974)
+target_position = Vector3(0, 0, -1.5)

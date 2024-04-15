@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Weapon_Resource" load_steps=3 format=3 uid="uid://cihaidpn4b0rs"]
+
+[ext_resource type="PackedScene" uid="uid://5rs7x36r1u4v" path="res://Scenes/bullet.tscn" id="1_106ya"]
+[ext_resource type="Script" path="res://Scripts/WeaponResource.gd" id="1_fty0j"]
+
+[resource]
+script = ExtResource("1_fty0j")
+weaponName = "Shotgun"
+weaponPath = NodePath("FPSRig/Shotgun")
+activateAnimation = "ShotgunAppear"
+shootAnimation = "ShotgunShoot"
+awayAnimation = "ShotgunAway"
+shootAnimSpeed = 1.0
+auto = true
+Type = 2
+projectile = ExtResource("1_106ya")
+projectileSpeed = 60.0
+projectileCount = 12
+projectileSpread = 0.1
+damage = 2.5

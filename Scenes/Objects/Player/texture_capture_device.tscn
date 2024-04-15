@@ -1,0 +1,70 @@
+[gd_scene load_steps=4 format=3 uid="uid://c58wafp2dvgk6"]
+
+[ext_resource type="ArrayMesh" uid="uid://2pk2p2mr145e" path="res://MODELS/Dagger.obj" id="2_j2414"]
+
+[sub_resource type="GDScript" id="GDScript_5mpps"]
+script/source = "extends SubViewport
+@onready var mesh_instance_3d = $Node3D/MeshInstance3D
+
+var items = {
+	\"dagger\" : {
+		\"model\" : preload(\"res://MODELS/Dagger.obj\"),
+		\"scale\" : Vector3(0.23, 0.23, 0.23)
+	},
+	
+	\"arm\" : {
+		\"model\" : preload(\"res://MODELS/Arm.obj\"),
+		\"scale\" : Vector3(0.07, 0.07, 0.07)
+	}
+}
+
+var DAGGER = items.dagger
+var ARM = items.arm
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	$Node3D.position.y = -1000.0
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	mesh_instance_3d.rotation.y += 5*delta
+	
+	if Input.is_action_just_pressed(\"punch\"):
+		mesh_instance_3d.mesh = DAGGER.model
+		mesh_instance_3d.scale = DAGGER.scale
+	if Input.is_action_just_pressed(\"stab\"):
+		mesh_instance_3d.mesh = ARM.model
+		mesh_instance_3d.scale = ARM.scale
+	pass
+"
+
+[sub_resource type="BoxMesh" id="BoxMesh_h7ie3"]
+
+[node name="TextureCaptureDevice" type="SubViewport"]
+transparent_bg = true
+script = SubResource("GDScript_5mpps")
+
+[node name="Node3D" type="Node3D" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="Node3D"]
+projection = 1
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(0.243873, 0, 0, 0, 0.243873, 0, 0, 0, 0.243873, 0, 0, -2)
+cast_shadow = 0
+gi_mode = 0
+mesh = ExtResource("2_j2414")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Node3D"]
+transform = Transform3D(0.901312, 0.237733, -0.362106, 0, 0.835941, 0.548819, 0.433171, -0.494657, 0.753443, -1.55822, 0.91507, -0.561766)
+light_color = Color(0, 0.694118, 0, 1)
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="Node3D"]
+transform = Transform3D(0.887027, -0.172987, 0.428087, 0.443158, 0.579208, -0.6842, -0.129594, 0.796614, 0.590434, 0.472717, -2.00825, -0.883219)
+light_negative = true
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(40.3271, 0, 0, 0, 40.3271, 0, 0, 0, 40.3271, 0, 0, 0)
+mesh = SubResource("BoxMesh_h7ie3")

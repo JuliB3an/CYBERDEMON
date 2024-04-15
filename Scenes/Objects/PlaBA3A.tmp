@@ -1,0 +1,121 @@
+[gd_scene load_steps=8 format=3 uid="uid://bakmfr6bmpbb5"]
+
+[ext_resource type="Script" path="res://Scenes/Objects/Player.gd" id="1_btrrh"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5iefk"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_u056t"]
+height = 1.0
+
+[sub_resource type="Animation" id="Animation_56727"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_cs1nb"]
+resource_name = "VaultAnimation"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.06, 0, 0), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-0.29147, 0, -0.139626), Vector3(-0.146608, 0, -0.0349066), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_xgtec"]
+resource_name = "WallClimb"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.418879, 0, 0), Vector3(-0.558505, 0, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_k7tsq"]
+_data = {
+"RESET": SubResource("Animation_56727"),
+"VaultAnimation": SubResource("Animation_cs1nb"),
+"WallClimb": SubResource("Animation_xgtec")
+}
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_btrrh")
+
+[node name="StandingCollisionShape" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_5iefk")
+
+[node name="CrouchingCollisionShape" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+shape = SubResource("CapsuleShape3D_u056t")
+disabled = true
+
+[node name="CrouchingRaycast" type="RayCast3D" parent="."]
+target_position = Vector3(0, 1, 0)
+
+[node name="Head" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0)
+
+[node name="Eyes" type="Node3D" parent="Head"]
+
+[node name="AdditionalCameraRotations" type="Node3D" parent="Head/Eyes"]
+
+[node name="Camera3D" type="Camera3D" parent="Head/Eyes/AdditionalCameraRotations"]
+fov = 100.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Head/Eyes/AdditionalCameraRotations"]
+libraries = {
+"": SubResource("AnimationLibrary_k7tsq")
+}
+
+[node name="HeadCast" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0207026, 0.437629, 0.0129974)
+target_position = Vector3(0, 0, -1)
+
+[node name="ToeCast" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0207026, -0.456776, 0.0129974)
+target_position = Vector3(0, 0, -1)

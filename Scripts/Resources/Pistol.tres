@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Weapon_Resource" load_steps=2 format=3 uid="uid://dau3a71f08xe8"]
+
+[ext_resource type="Script" path="res://Scripts/WeaponResource.gd" id="1_2ab44"]
+
+[resource]
+script = ExtResource("1_2ab44")
+weaponName = "Pistol"
+weaponPath = NodePath("FPSRig/Pistol")
+activateAnimation = "PistolAppear"
+shootAnimation = "PistolShoot"
+awayAnimation = "PistolAway"
+shootAnimSpeed = 1.8
+auto = false
+Type = 1
+projectileCount = 1
+projectileSpread = 0.0

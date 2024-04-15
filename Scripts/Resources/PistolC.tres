@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="Weapon_Resource" load_steps=3 format=3 uid="uid://cnrqn8aalvsrb"]
+
+[ext_resource type="Script" path="res://Scripts/WeaponResource.gd" id="1_535pf"]
+[ext_resource type="PackedScene" uid="uid://1ji568gc13d3" path="res://Scenes/BouncyPlasma.tscn" id="1_ea07h"]
+
+[resource]
+script = ExtResource("1_535pf")
+weaponName = "PistolC"
+weaponPath = NodePath("FPSRig/PistolC")
+activateAnimation = "PistolCAppear"
+shootAnimation = "PistolCShoot"
+shootAnimSpeed = 1.0
+auto = false
+Type = 2
+projectile = ExtResource("1_ea07h")
+projectileSpeed = 40.0
+projectileCount = 2
+projectileSpread = 0.1
+damage = 5.0

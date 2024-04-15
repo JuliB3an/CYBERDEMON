@@ -1,0 +1,269 @@
+[gd_scene load_steps=17 format=3 uid="uid://bakmfr6bmpbb5"]
+
+[ext_resource type="Script" path="res://Scenes/Objects/Player/Player.gd" id="1_btrrh"]
+[ext_resource type="PackedScene" uid="uid://ckkkhb1b7cwrr" path="res://Scenes/Objects/Player/PlayerGui.tscn" id="2_aio6r"]
+[ext_resource type="Script" path="res://Scenes/Objects/Player/InteractionCast.gd" id="3_ly3xe"]
+[ext_resource type="FontFile" uid="uid://beeixfocsr5rf" path="res://VCR_OSD_MONO_1.001.ttf" id="3_uiayp"]
+[ext_resource type="Script" path="res://Scenes/Objects/Player/InteractionSphereCast.gd" id="5_aoycp"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5iefk"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_u056t"]
+height = 1.0
+
+[sub_resource type="Animation" id="Animation_f4g30"]
+resource_name = "Punch"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../Hands/LeftHand:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.7),
+"transitions": PackedFloat32Array(0.129408, 0.129408, 0.129408, 0.129408),
+"update": 0,
+"values": [Vector3(-0.344, 0.369, -0.233), Vector3(-0.044, 0.404, -0.623), Vector3(-0.044, 0.404, -0.568), Vector3(-0.429, 0.339, -0.063)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../Hands/LeftHand:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.0767945, -0.541052, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../../Hands/LeftHand:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.62),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.189, 0.189, 0.599), Vector3(0.189023, 0.189023, 0.189023)]
+}
+
+[sub_resource type="Animation" id="Animation_56727"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../../Hands/LeftHand:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.42862, 0.189315, -0.0632651)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../../Hands/LeftHand:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.593412, 0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../../Hands/LeftHand:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.189023, 0.189023, 0.189023)]
+}
+
+[sub_resource type="Animation" id="Animation_cs1nb"]
+resource_name = "VaultAnimation"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.06, 0, 0), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-0.29147, 0, -0.139626), Vector3(-0.146608, 0, -0.0349066), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_xgtec"]
+resource_name = "WallClimb"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.418879, 0, 0), Vector3(-0.558505, 0, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_k7tsq"]
+_data = {
+"Punch": SubResource("Animation_f4g30"),
+"RESET": SubResource("Animation_56727"),
+"VaultAnimation": SubResource("Animation_cs1nb"),
+"WallClimb": SubResource("Animation_xgtec")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_41sw3"]
+font = ExtResource("3_uiayp")
+font_size = 30
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tstnd"]
+transparency = 1
+albedo_color = Color(0, 1, 0.164706, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_cwacx"]
+material = SubResource("StandardMaterial3D_tstnd")
+radius = 0.1
+height = 0.2
+radial_segments = 7
+rings = 4
+
+[sub_resource type="SphereMesh" id="SphereMesh_twfec"]
+radial_segments = 8
+rings = 4
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_btrrh")
+
+[node name="StandingCollisionShape" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_5iefk")
+
+[node name="CrouchingCollisionShape" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+visible = false
+shape = SubResource("CapsuleShape3D_u056t")
+disabled = true
+
+[node name="CrouchingRaycast" type="RayCast3D" parent="."]
+target_position = Vector3(0, 1, 0)
+
+[node name="Head" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0)
+
+[node name="Eyes" type="Node3D" parent="Head"]
+
+[node name="AdditionalCameraRotations" type="Node3D" parent="Head/Eyes"]
+
+[node name="Camera3D" type="Camera3D" parent="Head/Eyes/AdditionalCameraRotations"]
+fov = 100.0
+
+[node name="Player" parent="Head/Eyes/AdditionalCameraRotations/Camera3D" instance=ExtResource("2_aio6r")]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Head/Eyes/AdditionalCameraRotations"]
+libraries = {
+"": SubResource("AnimationLibrary_k7tsq")
+}
+speed_scale = 1.5
+
+[node name="InteractionCast" type="RayCast3D" parent="Head/Eyes"]
+target_position = Vector3(0, 0, -2.5)
+script = ExtResource("3_ly3xe")
+
+[node name="InteractionGUI" type="Control" parent="Head/Eyes/InteractionCast"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Head/Eyes/InteractionCast/InteractionGUI"]
+layout_mode = 0
+offset_left = 615.0
+offset_top = 349.0
+offset_right = 669.0
+offset_bottom = 376.0
+text = "[ ]"
+label_settings = SubResource("LabelSettings_41sw3")
+
+[node name="InteractionSphereCast" type="RayCast3D" parent="Head/Eyes/InteractionCast"]
+target_position = Vector3(0, 0, -10)
+script = ExtResource("5_aoycp")
+
+[node name="InteractionSphere" type="MeshInstance3D" parent="Head/Eyes/InteractionCast/InteractionSphereCast"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.3)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_cwacx")
+skeleton = NodePath("../..")
+
+[node name="Hands" type="Node3D" parent="Head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.485232, 0)
+
+[node name="LeftHand" type="MeshInstance3D" parent="Head/Hands"]
+transform = Transform3D(0.189023, 0, 0, 0, 0.156707, 0.1057, 0, -0.1057, 0.156707, -0.42862, 0.189315, -0.0632651)
+rotation_order = 0
+cast_shadow = 0
+mesh = SubResource("SphereMesh_twfec")
+
+[node name="RightHand" type="MeshInstance3D" parent="Head/Hands"]
+transform = Transform3D(0.189023, 0, 0, 0, 0.189023, 0, 0, 0, 0.189023, 0.430935, 0.289315, -0.232325)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_twfec")
+
+[node name="HeadCast" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0)
+target_position = Vector3(0, 0, -0.9)
+
+[node name="ToeCast" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.457, 0)
+target_position = Vector3(0, 0, -0.9)
