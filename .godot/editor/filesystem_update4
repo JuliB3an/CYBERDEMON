@@ -1,5 +1,4 @@
-res://Rooms/DebugRoom.tscn
+res://Rooms/ThePistolTutorial.tscn
 res://Scenes/WhiteTransparent.tres
 res://Scenes/Objects/Player/Player.gdshader
-res://addons/qodot/qodot_project_config.tres
-res://addons/qodot/game_definitions/trenchbroom_game_config.tres
+res://Scenes/Objects/Player/Player.tscn

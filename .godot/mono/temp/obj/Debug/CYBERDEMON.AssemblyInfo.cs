@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CYBERDEMON")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+db553dc05aef7b953df942618b5f8509f3ecb091")]
 [assembly: System.Reflection.AssemblyProductAttribute("CYBERDEMON")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CYBERDEMON")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

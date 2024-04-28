@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "VJtJPnEDvVH6BqYrlBp5+LSENoxH/E7RICRu2f55t8lkGfnM6JJlv5hOc3Ioq//Au1BLe5qJlglAXPy/oOSr0g==",
+  "dgSpecHash": "KP/DWzhfqNsHDpx20pdQuRnYlb2hK5jd7MG+obZUeixhTTOW2dgHC0tUyfpkJPULCCS8NL6e1K0de3EyF2Q7wA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\lilli\\OneDrive\\Desktop\\Programming\\MyGames\\FPSGame\\CYBERDEMON.csproj",
+  "projectFilePath": "C:\\Users\\lilli\\OneDrive\\Desktop\\Programming\\MyGames\\FPSGame\\CYBERDEMON\\CYBERDEMON.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\lilli\\.nuget\\packages\\godot.sourcegenerators\\4.2.1\\godot.sourcegenerators.4.2.1.nupkg.sha512",
     "C:\\Users\\lilli\\.nuget\\packages\\godotsharp\\4.2.1\\godotsharp.4.2.1.nupkg.sha512",

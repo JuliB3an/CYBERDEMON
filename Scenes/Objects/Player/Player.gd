@@ -1,4 +1,15 @@
 extends CharacterBody3D
+
+#load files from project
+var jumpSound = preload("res://Sounds/PlayerSounds/CyberDemonJump.wav")
+var landSound = preload("res://Sounds/PlayerSounds/CyberDemonLand.wav")
+var painSound = preload("res://Sounds/PlayerSounds/CyberDemonOwie.wav")
+var foundSound = preload("res://Sounds/PlayerSounds/CyberDemonFoundSomething.wav")
+var deathSound = preload("res://Sounds/PlayerSounds/CyberDemonDies.wav")
+
+var walkSound = preload("res://Sounds/PlayerSounds/CyberDemonWalk.wav")
+var crawlSound = preload("res://Sounds/PlayerSounds/CyberDemonCrawl.wav")
+
 #nodes
 @onready var head = $Head
 @onready var standing_collision_shape = $StandingCollisionShape
@@ -12,6 +23,8 @@ extends CharacterBody3D
 @onready var camera_3d = $Head/Eyes/AdditionalCameraRotations/Camera3D
 @onready var wall_slide_cast = $WallSlideCast
 @onready var interaction_cast = $Head/Eyes/InteractionCast
+@onready var sound_player = $PlayerSounds
+@onready var player_movement = $PlayerMovement
 
 #hand animations
 @onready var idle_right_hand = $Head/Eyes/AdditionalCameraRotations/Camera3D/PlayerGUI/IdleRightHand
@@ -63,6 +76,7 @@ var freeClimb = false
 var dashing = false
 var slamming = false
 var dashDir = Vector3.ZERO
+var last_velocity = Vector3.ZERO
 
 const walkingSpeed = 8.0
 const sprintSpeed = 12.0
@@ -70,7 +84,7 @@ const crouchingSpeed = 2.0
 var sprintUpping = 0.0
 var wallStopTimer = 0.0
 
-const jumpvelocity = 7.2
+const jumpvelocity = 7.6
 
 #mouse sensetivity
 var mouseMultiplier = 1
@@ -179,7 +193,7 @@ func _physics_process(delta):
 			else:
 				curspeed = sprintSpeed
 				targspeed = sprintSpeed
-				momentumBonus = clamp(momentumBonus - velocity.y*15, 2.0, 15.0)
+				momentumBonus = clamp(momentumBonus - velocity.y*8, 2.0, 15.0)
 	else:
 		curspeed = lerp(curspeed, crouchingSpeed, 10*delta)
 		targspeed = curspeed
@@ -194,40 +208,46 @@ func _physics_process(delta):
 		if !dashing:
 			velocity.y -= gravity * delta
 		if is_on_wall_only() && velocity.y < 0.0:
-			velocity.y *= 0.9
+			velocity.y *= 0.95
 		
 		if !head_cast.is_colliding() && toe_cast.is_colliding() && (dashing||canVault):
 			curspeed = min(curspeed, sprintSpeed+2)
 			velocity.y = jumpvelocity
 			if !justVaulted:
+				play_sound(sound_player, jumpSound, true)
 				animation_player.play('VaultAnimation')
 			justVaulted = true
 			canVault = false
-		elif !toe_cast.is_colliding() && justVaulted:
-			canVault = false
-		elif (head_cast.is_colliding() && toe_cast.is_colliding()) && !wallRan && (curspeed+momentumBonus) > sprintSpeed:
-			velocity.y = max(jumpvelocity*((curspeed+momentumBonus)/sprintSpeed), jumpvelocity)
-			curspeed *= 0.25
-			animation_player.play('WallClimb')
-			sprintUpping = clamp(sprintUpping-1, 0, 6)
-			freeClimb = false
-			dashing = false
-			wallRan = true
-			canVault = true
-			justVaulted = false
+		#elif !toe_cast.is_colliding() && justVaulted:
+			#canVault = false
+		#elif (head_cast.is_colliding() && toe_cast.is_colliding()) && !wallRan && (curspeed+momentumBonus) > sprintSpeed:
+			#velocity.y = max(jumpvelocity*((curspeed+momentumBonus)/sprintSpeed), jumpvelocity)
+			#play_sound(sound_player, crawlSound, true, true)
+			#curspeed *= 0.25
+			#animation_player.play('WallClimb')
+			#sprintUpping = clamp(sprintUpping-1, 0, 6)
+			#freeClimb = false
+			#dashing = false
+			#wallRan = true
+			#canVault = true
+			#justVaulted = false
 	else:
 		wallRan = false
 		sprintUpping = 1
 		justVaulted = false
 		momentumBonus = move_toward(momentumBonus, 0.0, 0.1)
 		curspeed = lerp(curspeed, targspeed, 10*delta)
+		
+		if last_velocity.y < -5.0:
+			play_sound(sound_player, landSound)
 	
 	print(momentumBonus)
 	
 	# Handle jump.
 	if Input.is_action_just_pressed("jump"):
 		if is_on_floor():
-			velocity.y = jumpvelocity
+			play_sound(sound_player, jumpSound, true)
+			velocity.y = jumpvelocity + (curspeed+momentumBonus)/4
 			if dashing:
 				momentumBonus += 3
 			if isCrouched:
@@ -306,13 +326,21 @@ func _physics_process(delta):
 		velocity.z = move_toward(velocity.z, 0, curspeed)
 	
 	#headbob
-	if is_on_floor() && input_dir != Vector2.ZERO:
+	if is_on_floor() && (input_dir != Vector2.ZERO || isCrouched):
+		var pitch = 1 + abs(sin(headbobIndex)*0.5)
+		pitch_sound(player_movement, pitch)
+		if isCrouched:
+			play_sound(player_movement, crawlSound, true, true)
+		else:
+			play_sound(player_movement, walkSound, true, true)
+		
 		headbobVector.y = sin(headbobIndex)
 		headbobVector.x = sin(headbobIndex/2)+0.5
 		
 		eyes.position.y = lerp(eyes.position.y, headbobVector.y*(headbobIntensityCurrent/2), delta*10)
 		eyes.position.x = lerp(eyes.position.x, headbobVector.x*headbobIntensityCurrent, delta*10)
 	else:
+		stop_sound(player_movement)
 		eyes.position.y = lerp(eyes.position.y, 0.0, delta*10)
 		eyes.position.x = lerp(eyes.position.x, 0.0, delta*10)
 	
@@ -320,5 +348,26 @@ func _physics_process(delta):
 	vaultTilt = lerp(vaultTilt, 0.0, 10*delta)
 	additional_camera_rotations.rotation.z = deg_to_rad(vaultTilt)
 	camera_3d.fov = fovTarget
-
+	
+	last_velocity = velocity
 	move_and_slide()
+
+func play_sound(_sound_player, _soundEffect, _override: bool = false, _butNotMe: bool = false, _sound_pitch = null):
+	if !_sound_player.is_playing() || (_override && (!_butNotMe || _sound_player.stream != _soundEffect)):
+		if _sound_pitch == null:
+			_sound_player.pitch_scale = randf_range(0.9, 1.1)
+		else:
+			_sound_player.pitch_scale = _sound_pitch
+		_sound_player.stream = _soundEffect
+		_sound_player.play()
+
+func stop_sound(_sound_player):
+	_sound_player.stop()
+
+func pitch_sound(_sound_player, _pitch):
+	_sound_player.pitch_scale = _pitch
+
+func comparative_dot_wall_normal():
+	if is_on_wall_only():
+		pass
+

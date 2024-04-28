@@ -1,0 +1,96 @@
+[gd_scene load_steps=8 format=3 uid="uid://dgufabcslroaa"]
+
+[ext_resource type="PackedScene" uid="uid://bakmfr6bmpbb5" path="res://Scenes/Objects/Player/Player.tscn" id="1_q8g33"]
+[ext_resource type="Texture2D" uid="uid://83r2kux0k0jw" path="res://PNG/Dark/texture_05.png" id="2_tnxu7"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_aabgd"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_2mimi"]
+sky_material = SubResource("ProceduralSkyMaterial_aabgd")
+
+[sub_resource type="Environment" id="Environment_ntxtr"]
+background_mode = 2
+sky = SubResource("Sky_2mimi")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h42pg"]
+albedo_texture = ExtResource("2_tnxu7")
+metallic_specular = 0.0
+roughness = 0.0
+uv1_triplanar = true
+uv1_world_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_01qm7"]
+transparency = 1
+blend_mode = 3
+cull_mode = 2
+albedo_color = Color(0.854902, 0, 0.282353, 0.0705882)
+
+[node name="World" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 13.602, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_ntxtr")
+
+[node name="Player" parent="." instance=ExtResource("1_q8g33")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 17, 0)
+
+[node name="Level" type="CSGCombiner3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.249925)
+material_override = SubResource("StandardMaterial3D_h42pg")
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Level"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 4.5, 0.440918)
+size = Vector3(80, 40, 80)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Level"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -6.49005, 0)
+operation = 2
+radius = 30.0
+height = 12.0
+sides = 6
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Level"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10.5099, 0)
+operation = 2
+radius = 38.5299
+height = 24.0
+sides = 6
+
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="Level"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -12, 0)
+radius = 12.0
+
+[node name="CSGCylinder3D4" type="CSGCylinder3D" parent="Level"]
+transform = Transform3D(0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, 0, -10.6, 0)
+radius = 8.0
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 20, 0)
+light_color = Color(1, 0, 0, 1)
+light_energy = 4.699
+spot_range = 71.112
+spot_attenuation = 0.258816
+spot_angle = 77.88
+spot_angle_attenuation = 1.41421
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 13, 0)
+light_energy = 4.699
+spot_range = 71.112
+spot_attenuation = 0.258816
+spot_angle = 77.88
+spot_angle_attenuation = 1.41421
+
+[node name="CSGCylinder3D5" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.35963, -0.249925)
+use_collision = true
+flip_faces = true
+radius = 31.0
+height = 36.0
+sides = 6
+material = SubResource("StandardMaterial3D_01qm7")

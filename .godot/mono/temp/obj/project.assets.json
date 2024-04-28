@@ -93,11 +93,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\lilli\\OneDrive\\Desktop\\Programming\\MyGames\\FPSGame\\CYBERDEMON.csproj",
+      "projectUniqueName": "C:\\Users\\lilli\\OneDrive\\Desktop\\Programming\\MyGames\\FPSGame\\CYBERDEMON\\CYBERDEMON.csproj",
       "projectName": "CYBERDEMON",
-      "projectPath": "C:\\Users\\lilli\\OneDrive\\Desktop\\Programming\\MyGames\\FPSGame\\CYBERDEMON.csproj",
+      "projectPath": "C:\\Users\\lilli\\OneDrive\\Desktop\\Programming\\MyGames\\FPSGame\\CYBERDEMON\\CYBERDEMON.csproj",
       "packagesPath": "C:\\Users\\lilli\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\lilli\\OneDrive\\Desktop\\Programming\\MyGames\\FPSGame\\.godot\\mono\\temp\\obj\\",
+      "outputPath": "C:\\Users\\lilli\\OneDrive\\Desktop\\Programming\\MyGames\\FPSGame\\CYBERDEMON\\.godot\\mono\\temp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\lilli\\AppData\\Roaming\\NuGet\\NuGet.Config",

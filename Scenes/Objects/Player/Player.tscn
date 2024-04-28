@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://bakmfr6bmpbb5"]
+[gd_scene load_steps=45 format=3 uid="uid://bakmfr6bmpbb5"]
 
 [ext_resource type="Script" path="res://Scenes/Objects/Player/Player.gd" id="1_btrrh"]
 [ext_resource type="PackedScene" uid="uid://ckkkhb1b7cwrr" path="res://Scenes/Objects/Player/PlayerGui.tscn" id="2_aio6r"]
@@ -12,11 +12,12 @@
 [ext_resource type="PackedScene" uid="uid://clgp62x6kmkfg" path="res://MODELS/kenney_blasterKit/Models/GLTF format/Rifle.glb" id="6_4p56b"]
 [ext_resource type="Resource" uid="uid://cihaidpn4b0rs" path="res://Scripts/Resources/Shotgun.tres" id="6_8e30x"]
 [ext_resource type="Resource" uid="uid://bcmqo05fo0b4y" path="res://Scripts/Resources/Rifle.tres" id="7_8614t"]
-[ext_resource type="Resource" uid="uid://cnrqn8aalvsrb" path="res://Scripts/Resources/PistolC.tres" id="8_3fw7o"]
 [ext_resource type="Resource" uid="uid://bmtt2i50ao457" path="res://Scripts/Resources/RifleB.tres" id="8_uocmh"]
 [ext_resource type="PackedScene" uid="uid://qny6hs6jkptd" path="res://MODELS/kenney_blasterKit/Models/GLTF format/PistolC.glb" id="10_2pyri"]
 [ext_resource type="PackedScene" uid="uid://cx4h38xhqm28b" path="res://MODELS/kenney_blasterKit/Models/GLTF format/RifleB.glb" id="11_odjlb"]
 [ext_resource type="Texture2D" uid="uid://cd6sbiamjg774" path="res://PNG/BlurryCircle.png" id="11_y07b4"]
+[ext_resource type="Texture2D" uid="uid://dcatpcjsoraqy" path="res://PNG/Orange/texture_04.png" id="17_7vfki"]
+[ext_resource type="AudioStream" uid="uid://shuinibjdetp" path="res://Sounds/PlayerSounds/CyberDemonJump.wav" id="18_qaxul"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5iefk"]
 radius = 0.4
@@ -228,6 +229,34 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector3(-0.108467, 0.0468848, 0.170331), Vector3(-0.108467, 0.0468848, 0.170331)]
+}
+
+[sub_resource type="Animation" id="Animation_jbws3"]
+resource_name = "PistolCShoot"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PistolC:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.0113697, 0.0487755, -0.229107), Vector3(-0.965167, 0.0488692, -0.228638), Vector3(0.0113697, 0.0487755, -0.229107)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PistolC:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.000759155, -0.0653896, 0.00303549), Vector3(-0.001, 0.3, 0.003), Vector3(-0.001, 0.3, 0.003), Vector3(-0.000759155, -0.0653896, 0.00303549)]
 }
 
 [sub_resource type="Animation" id="Animation_134b6"]
@@ -655,34 +684,6 @@ tracks/1/keys = {
 "values": [Vector3(0, 0, 0), Vector3(-1.02974, 0, 0), Vector3(-0.392699, 0, 0), Vector3(0, 0, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_jbws3"]
-resource_name = "PistolCShoot"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("PistolC:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector3(0.0113697, 0.0487755, -0.229107), Vector3(-0.965167, 0.0488692, -0.228638), Vector3(0.0113697, 0.0487755, -0.229107)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("PistolC:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.4),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(-0.000759155, -0.0653896, 0.00303549), Vector3(-0.001, 0.3, 0.003), Vector3(-0.001, 0.3, 0.003), Vector3(-0.000759155, -0.0653896, 0.00303549)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ifogx"]
 _data = {
 "PistolAppear": SubResource("Animation_ip6xr"),
@@ -701,6 +702,15 @@ _data = {
 "ShotgunShoot": SubResource("Animation_qht6a")
 }
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bb7s6"]
+albedo_texture = ExtResource("17_7vfki")
+uv1_triplanar = true
+uv1_triplanar_sharpness = 45.2549
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_okp3x"]
+material = SubResource("StandardMaterial3D_bb7s6")
+radius = 0.4
+
 [node name="Player" type="CharacterBody3D"]
 collision_layer = 2
 collision_mask = 5
@@ -711,7 +721,6 @@ shape = SubResource("CapsuleShape3D_5iefk")
 
 [node name="CrouchingCollisionShape" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
-visible = false
 shape = SubResource("CapsuleShape3D_u056t")
 disabled = true
 
@@ -731,7 +740,7 @@ fov = 100.0
 [node name="PlayerGUI" parent="Head/Eyes/AdditionalCameraRotations/Camera3D" instance=ExtResource("2_aio6r")]
 
 [node name="InteractionSphereCast" type="RayCast3D" parent="Head/Eyes/AdditionalCameraRotations/Camera3D"]
-target_position = Vector3(0, 0, -50)
+target_position = Vector3(0, 0, -500)
 hit_back_faces = false
 script = ExtResource("5_aoycp")
 
@@ -768,8 +777,8 @@ label_settings = SubResource("LabelSettings_41sw3")
 
 [node name="WeaponManager" type="Node3D" parent="Head"]
 script = ExtResource("4_u88ds")
-wepResources = Array[Resource("res://Scripts/WeaponResource.gd")]([ExtResource("5_a1g7y"), ExtResource("8_3fw7o"), ExtResource("6_8e30x"), ExtResource("7_8614t"), ExtResource("8_uocmh")])
-wepArray = Array[String](["PistolC", "Shotgun", "RifleB"])
+wepResources = Array[Resource("res://Scripts/WeaponResource.gd")]([ExtResource("5_a1g7y"), ExtResource("6_8e30x"), ExtResource("7_8614t"), ExtResource("8_uocmh")])
+wepArray = Array[String](["Pistol", "Shotgun", "Rifle"])
 
 [node name="FPSRig" type="Node3D" parent="Head/WeaponManager"]
 transform = Transform3D(-0.379882, 0.00401015, -0.00862002, 0.00208652, 0.371308, 0.0807847, 0.00927544, 0.0807119, -0.371214, 0.173841, -0.103403, -0.216)
@@ -778,7 +787,8 @@ transform = Transform3D(-0.379882, 0.00401015, -0.00862002, 0.00208652, 0.371308
 visible = false
 
 [node name="PistolC" parent="Head/WeaponManager/FPSRig" instance=ExtResource("10_2pyri")]
-transform = Transform3D(0.972586, 0.227378, 0.0487532, -0.227093, 0.97381, -0.0113694, -0.0500612, -1.37482e-05, 0.998748, -0.000759155, -0.0653896, 0.00303549)
+transform = Transform3D(0.972586, 0.227378, 0.0487531, -0.227093, 0.97381, -0.0113695, -0.0500612, -1.37147e-05, 0.998748, -0.000759155, -0.0653896, 0.00303549)
+visible = false
 
 [node name="Shotgun" parent="Head/WeaponManager/FPSRig" instance=ExtResource("5_tspjs")]
 visible = false
@@ -796,6 +806,7 @@ transform = Transform3D(0.999999, 1.72295e-08, 7.45058e-08, -1.72295e-08, 1, 8.9
 [node name="Hitflash" type="Sprite3D" parent="Head/WeaponManager/FPSRig/Muzzle"]
 modulate = Color(1, 1, 0, 1)
 billboard = 1
+texture_filter = 0
 texture = ExtResource("11_y07b4")
 
 [node name="WeaponAnimator" type="AnimationPlayer" parent="Head/WeaponManager/FPSRig"]
@@ -804,9 +815,17 @@ libraries = {
 }
 
 [node name="HeadCast" type="RayCast3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0.20436)
 target_position = Vector3(0, 0, -0.9)
 
 [node name="ToeCast" type="RayCast3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.558903, 0.829233, 0, -0.829233, 0.558903, 0, -0.0917965, -0.459464)
+transform = Transform3D(1, 0, 0, 0, 0.558903, 0.829233, 0, -0.829233, 0.558903, 0, -0.222643, -0.19108)
 target_position = Vector3(0, 0, -0.9)
+
+[node name="Capsule" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_okp3x")
+
+[node name="PlayerSounds" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("18_qaxul")
+
+[node name="PlayerMovement" type="AudioStreamPlayer" parent="."]

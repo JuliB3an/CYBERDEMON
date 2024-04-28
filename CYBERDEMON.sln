@@ -1,6 +1,6 @@
 ﻿Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CYBERDEMON", "CYBERDEMON.csproj", "{0E1F3F3C-6136-4529-8897-6EAA86A714ED}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CYBERDEMON", "CYBERDEMON.csproj", "{A8430AB2-9C29-4839-956C-C450E3F49C5C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,11 +9,11 @@ Global
 	ExportRelease|Any CPU = ExportRelease|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{0E1F3F3C-6136-4529-8897-6EAA86A714ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0E1F3F3C-6136-4529-8897-6EAA86A714ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0E1F3F3C-6136-4529-8897-6EAA86A714ED}.ExportDebug|Any CPU.ActiveCfg = ExportDebug|Any CPU
-		{0E1F3F3C-6136-4529-8897-6EAA86A714ED}.ExportDebug|Any CPU.Build.0 = ExportDebug|Any CPU
-		{0E1F3F3C-6136-4529-8897-6EAA86A714ED}.ExportRelease|Any CPU.ActiveCfg = ExportRelease|Any CPU
-		{0E1F3F3C-6136-4529-8897-6EAA86A714ED}.ExportRelease|Any CPU.Build.0 = ExportRelease|Any CPU
+		{A8430AB2-9C29-4839-956C-C450E3F49C5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8430AB2-9C29-4839-956C-C450E3F49C5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8430AB2-9C29-4839-956C-C450E3F49C5C}.ExportDebug|Any CPU.ActiveCfg = ExportDebug|Any CPU
+		{A8430AB2-9C29-4839-956C-C450E3F49C5C}.ExportDebug|Any CPU.Build.0 = ExportDebug|Any CPU
+		{A8430AB2-9C29-4839-956C-C450E3F49C5C}.ExportRelease|Any CPU.ActiveCfg = ExportRelease|Any CPU
+		{A8430AB2-9C29-4839-956C-C450E3F49C5C}.ExportRelease|Any CPU.Build.0 = ExportRelease|Any CPU
 	EndGlobalSection
 EndGlobal
